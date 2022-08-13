@@ -107,6 +107,7 @@ button {
     transition: all 0.4s;
     top: 0;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 300px;
     max-width: 90%;
     border: 1px solid #ccc;
@@ -247,7 +248,7 @@ th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: <?php echo trim(preg_replace('/\s\s+/', ' ', $config[3])); ?>;
+    background-color: <?=$config_web["color"]?>;
     color: white;
     font-size: 100%;
 }
@@ -274,4 +275,8 @@ th {
     text-align: left;
     color: white;
     text-align: center;
+}
+
+.full_size {
+    width: 100%;
 }
