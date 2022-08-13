@@ -146,3 +146,38 @@ button:hover {
     transform: scale(0.95);
     box-shadow: none;
 }
+
+/* icon send */
+
+.wrapper {
+    width: 100px;
+    margin: 4em auto 0;
+}
+
+.checkmark {
+    stroke: rgb(40, 194, 40);
+    stroke-dashoffset: 745.7485351563;
+    stroke-dasharray: 745.7485351563;
+    -webkit-animation: 2s dash 0.5s ease-out forwards;
+            animation: 2s dash 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dashoffset: 745.7485351563;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 745.7485351563;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/***************************************************************************************/
