@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^css/styles.css$ css/styles.php [L]
+RewriteRule ^Inscription$ inscription.php [L]
+RewriteRule ^Validation$ validation.php [L]
