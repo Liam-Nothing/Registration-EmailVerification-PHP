@@ -55,7 +55,7 @@ body {
 header {
     padding: 20px 0px;
     width: 100%;
-    background: <?=$config["color"]?>;
+    background: <?=$config_web["color"]?>;
     text-align: center;
     font-family: Verdana, sans-serif;
 }
@@ -181,3 +181,54 @@ button:hover {
 }
 
 /***************************************************************************************/
+
+.card {
+    border: 1px solid #ccc;
+    padding: 30px;
+
+    margin: auto;
+    float: none;
+    /* margin-bottom: 10px; */
+    max-width: 90%;
+    width: 500px;
+
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fafafa, #ebebeb);
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+    
+    margin-bottom: 30px;
+}
+
+.alert {
+    margin-top: 30px;
+    border: none;
+    padding: 3px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ff6464, #ffacac);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    position: relative;
+    top: 30px;
+    animation: 0.5s ease 0s forwards alternate view_error,  0.5s ease 3.5s forwards reverse view_error;
+}
+
+@keyframes view_error {
+    from {
+        opacity:0;
+        top: 30px;
+    }
+    to {
+        opacity:1;
+        top: 0px;
+    }
+}
+
+.hide{
+    display: none;
+}
+
+#error:target {
+    display: block !important;  
+}

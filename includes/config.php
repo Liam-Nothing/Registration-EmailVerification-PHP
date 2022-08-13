@@ -1,6 +1,6 @@
 <?php
 
-$config = [
+$config_web = [
 	"title" => "Exemple Website",
 	"title_admin" => "Exemple Website - Admin",
 	"title_page" => "Enregistrement de participation",
