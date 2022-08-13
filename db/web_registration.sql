@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2022 at 11:45 PM
+-- Generation Time: Aug 13, 2022 at 11:49 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `email`, `password`, `username`) VALUES
-(1, 'test@test.fr', '$2y$10$Y.4l9KrZIy41EVHbEXmIP.a/JBvnoADaL8y01cH.7SVu4lPtjIvmG', 'Test');
+(1, 'test@test.fr', '$2y$10$804RluBVDGA69h/RMzbtb.cNHr/Efl9ASDQDpiArRrPPuOBzJr.cO', 'Test');
 
 -- --------------------------------------------------------
 
@@ -68,6 +68,13 @@ INSERT INTO `users` (`id`, `pass`, `name`, `lastname`, `email`, `phone`, `valida
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`,`username`);
 
 --
 -- Indexes for table `users`
