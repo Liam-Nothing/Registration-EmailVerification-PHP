@@ -1,6 +1,40 @@
 <?php
 
 require_once("includes/config.php");
+require_once("includes/neSecurity.php");
+require_once("includes/functs_db.php");
+
+$database = connectDB("web_registration", $config);
+$data = array(
+    ["code", 20, 16]
+);
+$data = data_security($data, $_GET);
+
+if (!isset($data["type"]) || $data["type"] != "error") {
+
+    $sqlr = $database->prepare("
+        UPDATE users 
+        SET validation='1'
+        WHERE pass=:pass
+        AND validation='0'
+    ");
+
+    $sqlr->bindParam(':pass', $data["code"]);
+    $valid_insert = $sqlr->execute();
+
+    if ($valid_insert) {
+        // var_dump($valid_insert);
+        // var_dump($data);
+        // OK
+    }else{
+        header("Location: Inscription#error");
+        exit(0);
+    }
+
+} else {
+    header("Location: ../Inscription#error");
+    exit(0);
+}
 
 ?>
 <!DOCTYPE html>

@@ -18,6 +18,10 @@ if (!isset($data["type"]) || $data["type"] != "error") {
 
     $data["pass"] = uniqid() . generateRandomString(5);
 
+    $actual_link = explode("/", "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+    array_pop($actual_link);
+    $validation_link = (implode("/", $actual_link)."/Validation/".$data["pass"]);
+
     $sqlr = $database->prepare("
         INSERT INTO users (pass, name, lastname, email, phone)
         VALUES (:pass, :name, :lastname, :email, :phone)
@@ -28,7 +32,13 @@ if (!isset($data["type"]) || $data["type"] != "error") {
     $sqlr->bindParam(':lastname', $data["lastname"]);
     $sqlr->bindParam(':email', $data["email"]);
     $sqlr->bindParam(':phone', $data["phone"]);
-    $valid_insert = $sqlr->execute();
+
+    try {
+        $valid_insert = $sqlr->execute();
+    } catch(PDOException $ex) {
+        header("Location: Inscription#error");
+        exit(0);
+    }
 
     if ($valid_insert) {
         //OK
@@ -69,6 +79,7 @@ if (!isset($data["type"]) || $data["type"] != "error") {
                 </svg>
             </div>
             <p>Vous allez recevoir un email de confirmation.</p>
+            <p>Send this link to email : <a href="<?=$validation_link?>"><?=$validation_link?></a></p>
         </section>
     </main>
     <footer>
