@@ -80,7 +80,7 @@ h3 {
     width: max-content;
 }
 
-input[type=text],input[type=email],input[type=tel] {
+input[type=text],input[type=email],input[type=tel],input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -231,4 +231,47 @@ button:hover {
 
 #error:target {
     display: block !important;  
+}
+
+td {
+    text-align: center;
+    border: none;
+}
+
+table {
+    width: 100%;
+    word-break: break-all;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: <?php echo trim(preg_replace('/\s\s+/', ' ', $config[3])); ?>;
+    color: white;
+    font-size: 100%;
+}
+
+td,
+th {
+    border: none;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    border: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    text-align: center;
 }
