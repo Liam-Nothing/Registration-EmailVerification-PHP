@@ -1,1 +1,1 @@
-# Simple PHP Email Incription + Validation
+# Simple PHP Email Registration + Validation
