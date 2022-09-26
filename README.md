@@ -24,3 +24,9 @@ This is an exemple of app where peoples can add informations and get a confimati
 - ## Default user to login page :
   - username : `Test`
   - password : `Test`
+
+- ## Pages :
+  - /Inscription : Register a account
+  - /Validation : Valid code send by email
+  - /Admin : Admin board (view registerd account)
+  - /Login : Login to admin board.
