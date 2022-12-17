@@ -1,4 +1,4 @@
-const url = "http://localhost/Registration-EmailVerification-PHP/api/";
+const url = "api/";
 
 function RequestAPI(url, data) {
     let xhr = new XMLHttpRequest();
