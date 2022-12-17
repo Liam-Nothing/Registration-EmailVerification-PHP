@@ -1,8 +1,8 @@
 # Simple PHP Email Registration + Validation
 
-<center>
-	<img src="README_SRC/main_img.png" width="500">
-</center>
+<p align="center">
+    <img src="README_SRC/main_img.png" width="500">
+</p>
 
 - ## Description :
 
