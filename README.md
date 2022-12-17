@@ -1,5 +1,9 @@
 # Simple PHP Email Registration + Validation
 
+<center>
+	<img src="README_SRC/main_img.png" width="500">
+</center>
+
 - ## Description :
 
 This is an exemple of app where peoples can add informations and get a confimation email to participe to an event by exemple. 
